@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" ng-app="myApp" ng-cloak="" class="no-js">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+    <th:block th:include="fragments/headerinc :: head"></th:block>
+</head>
+<body>
+<th:block th:include="fragments/header :: header"></th:block>
+<h2>Product Details</h2>
+
+<md-card style="width:50%;">
+    <md-card-header>
+        <md-card-header-text>
+            <span class="md-title" th:text="${product.name}"></span>
+            <span class="md-subhead" th:text="${product.price}">$</span>
+        </md-card-header-text>
+    </md-card-header>
+    <img style="max-width: 70%" th:src="@{/images/avatar/{photoNames}(photoNames=${product.photoName})}" class="md-card-image custom-card" alt="image caption">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">About skates</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum pretium suscipit. Etiam tristique sapien vel dui pellentesque, in sodales felis facilisis. Cras nulla dui, gravida eu risus vel, tempor pulvinar nisi. Vestibulum vel lacus dignissim, commodo velit ut, suscipit.
+        </p>
+    </md-card-content>
+</md-card>
+<th:block th:include="fragments/headerinc :: angular"></th:block>
+</body>
+</html>
